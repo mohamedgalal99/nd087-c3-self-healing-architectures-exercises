@@ -46,6 +46,7 @@ module "ec2_instance" {
 
   ami                    = data.aws_ami.amazon_linux_2.id
   instance_type          = "t2.micro"
+  key_name               = "galal"
   vpc_security_group_ids = [aws_security_group.ssh_access.id]
   subnet_id              = module.vpc.public_subnet_ids[0]
 }
